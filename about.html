@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="HandheldFriendly" content="true">
+		<title>About</title>
+		<link rel="icon" href="images/logo.png">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/dojo/1.13.0/dojo/dojo.js"></script>
+		<script src="js/main.js"></script>		<!-- getting main.js direction -->
+		<script>
+			$('document').ready(function(){
+				$(".btn").click(function(){
+					$(".input").toggleClass("active").focus().val("");
+					$(this).toggleClass("animate");
+					$(".input").val("");
+				});
+			});
+			$('document').ready(function()		<!-- hide will work when full page is loaded -->
+			{
+				$('#btn').hide()				<!-- hiding Hide button after roloading -->
+				$('.para').hide()				<!-- hiding Hide button after roloading -->
+				$('.show').click(function()		<!-- after clicking read more button what will occur-->
+				{
+					$('.para').show();				<!-- showing full text -->
+					$('.show').hide();				<!-- hiding read more text -->
+					$('#btn').show();				<!-- showing hide button -->					
+				});	
+				
+				$('#btn').click(function()		<!-- after clicking hide button what will occur-->
+				{
+					$('.para').hide();				<!-- hiding full text -->
+					$('.show').show();				<!-- showing read more text -->
+					$('#btn').hide();				<!-- hiding hide button -->					
+				});
+			});
+		</script>		
+	</head>
+
+	<body>
+	
+		<h>     <!-- header with full bold, h1 to h6 for decreasing bold format. italic "<i></<i>", underline "<u></u>" with headers -->
+			<center class="title_bg"><img src="images/logo.png" ></img>Traffic Prediction Using Kalman Filter</center>
+		</h>
+		
+		<div class="nav_bar">
+			<ul>				
+				<li> <a href="index.html"><img src="images/home.png" width="18"/></img> Home </a></li>
+				<li> <a href="about.html" id="onlink"> About </a></li>
+				<li> <a href="photos.html"> Photos </a></li>
+				<li> <a href="hardware.html"> Hardware </a></li>
+				<li> <a href="kalman.html"> Kalman ft </a></li>
+				<li> <a href="data.php"> Data </a></li>
+				<li> <a href="app.html"> APP </a></li>
+				<li> <a href="contact.html"> Contact </a></li>
+			</ul>	
+		</div>
+		<!--
+		<div class="wrapper">
+			<div class="search-box">
+				<input type="text" placeholder="Search" class="input">
+				<div class="btn">
+					<i class="fa fa-search" aria-hidden="true"></i>
+				</div>
+			</div>
+		</div>	
+		-->
+		<div class="intro_area"> 	<!-- diving into parts -->
+			<div class="intro_text"> 
+				<h1> Welcome </h1>
+				<p1>
+				In an attempt to serve humanity and contribute to the scientific community, 
+				the idea of our thesis came into existence. Traffic congestions are a nightmare that every city, 
+				big or small face currently and as it seems will face in the future as well. 
+				We attempt to solve this problem by trying to predict the number of cars that will pass a particular point of a roadway. 
+				In doing so, we hope to give the user of our custom built mobile application a visual idea of what the traffic condition of their route for the next day/ week. 
+				This would urge them to seek a different route which would help distribute the traffic load of a particular road and in turn, reduce traffic congestion. 
+				Using practically collected data and applying it into the Kalman Filter algorithm would  <button class="show">Read More..</button><span class="para"> in select out the predicted number of cars at particular times on different roads. 
+				After doing so, the calculated car number will then be used to calculate the traffic flow, traffic density, headway and spacing. 
+				These predicted traffic parameters will then be uploaded onto a server. 
+				This set of data will then be displayed onto our custom made mobile application using a preset color code for the routes. 
+				This way, proper utilization of roads and time can be achieved. Even though there are other online applications which tend to serve the same purpose, 
+				their usage of metadata from cell phones to show the traffic congestion of roads, 
+				raises a matter of personal security not to mention the expensiveness of the whole procedure.</span>
+				</p1>
+				<button id="btn"> Hide </button>
+			</div>
+		</div>	
+		<div class="container"> 	
+			<div class="footer_area container"> 	
+				<div class="copyright"> 
+					<p> copyright www.kalmanft.com | All Right Reserved </p>
+				</div>	
+				<div class="designer"> 
+					<p> Designed By Soumik </p>
+				</div>	
+			</div>
+		</div>
+		
+	</body>
+
+</html>

@@ -12,7 +12,7 @@ A bachelor thesis project that predicts road traffic density using the **Kalman 
 
 ## Live Demo
 
-Hosted on GitHub Pages: [https://your-username.github.io/your-repo-name](https://your-username.github.io/your-repo-name)
+Hosted on GitHub Pages: https://soumik31.github.io/thesis.github.io/
 
 > The Data page uses mock/sample data since the original MySQL backend is not available on GitHub Pages.
 

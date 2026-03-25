@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="HandheldFriendly" content="true">
+		<title>Data</title>
+		<link rel="icon" href="images/logo.png">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="js/main.js"></script>
+		<script src="data/mock.js"></script>
+	</head>
+
+	<body>
+
+		<h>
+			<center class="title_bg"><img src="images/logo.png" />Traffic Prediction Using Kalman Filter</center>
+		</h>
+
+		<div class="nav_bar">
+			<ul>
+				<li> <a href="index.html"><img src="images/home.png" width="18"/> Home </a></li>
+				<li> <a href="about.html"> About </a></li>
+				<li> <a href="photos.html"> Photos </a></li>
+				<li> <a href="hardware.html"> Hardware </a></li>
+				<li> <a href="kalman.html"> Kalman ft </a></li>
+				<li> <a href="data.html" id="onlink"> Data </a></li>
+				<li> <a href="app.html"> APP </a></li>
+				<li> <a href="contact.html"> Contact </a></li>
+			</ul>
+		</div>
+
+		<div class="main_container1">
+			<h1>Data Table</h1>
+			<p>
+
+				<!-- Daily raw vehicle count data -->
+				<table width="31.5%" class="tab" id="daily-table">
+					<tr>
+						<th> id </th>
+						<th> Route </th>
+						<th> Date </th>
+						<th> Time </th>
+						<th> ACC </th>
+					</tr>
+				</table>
+
+				<!-- Route reference table -->
+				<table width="17%" class="tab">
+					<tr>
+						<th> Route </th>
+						<th> Road </th>
+					</tr>
+					<tbody id="route-table"></tbody>
+				</table>
+
+				<!-- Kalman filtered prediction data -->
+				<table width="47.5%" class="tab" id="kalman-table">
+					<tr>
+						<th> id </th>
+						<th> Route </th>
+						<th> Day </th>
+						<th> Time </th>
+						<th> KPCC </th>
+						<th> Density </th>
+					</tr>
+				</table>
+
+			</p>
+		</div>
+
+		<div class="container">
+			<div class="footer_area container">
+				<div class="copyright">
+					<p> copyright www.kalmanft.com | All Right Reserved </p>
+				</div>
+				<div class="designer">
+					<p> Designed By Soumik </p>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			// Populate daily data table
+			const dailyTable = document.getElementById('daily-table');
+			dailyData.forEach(function(row) {
+				const tr = document.createElement('tr');
+				tr.innerHTML = '<td>' + row.id + '</td><td>' + row.Route + '</td><td>' + row.Day + '</td><td>' + row.Time + '</td><td>' + row.ACC + '</td>';
+				dailyTable.appendChild(tr);
+			});
+
+			// Populate route map table
+			const routeTable = document.getElementById('route-table');
+			routeMap.forEach(function(row) {
+				const tr = document.createElement('tr');
+				tr.innerHTML = '<td>' + row.Route + '</td><td>' + row.Road + '</td>';
+				routeTable.appendChild(tr);
+			});
+
+			// Populate kalman data table
+			const kalmanTable = document.getElementById('kalman-table');
+			kalmanData.forEach(function(row) {
+				const tr = document.createElement('tr');
+				tr.innerHTML = '<td>' + row.id + '</td><td>' + row.Route + '</td><td>' + row.Day + '</td><td>' + row.Time + '</td><td>' + row.KPCC + '</td><td>' + row.Density + '</td>';
+				kalmanTable.appendChild(tr);
+			});
+		</script>
+
+	</body>
+</html>
